@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest android:versionCode="1" android:versionName="1.0"
+    package="lcq.game.line" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
+    <application android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:name="lcq.game.line.ActivityMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!--created by licq at 2014-09-16 17:13:40-->
+        <activity android:name="lcq.game.line.ActivityGame"/>
+        <!--created by licq at 2014-09-16 17:13:59-->
+        <activity android:name="lcq.game.line.ActivitySettings"/>
+        <!--created by licq at 2014-09-16 17:14:28-->
+        <activity android:name="lcq.game.line.ActivityHelp"/>
+    </application>
+</manifest>
