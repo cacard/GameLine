@@ -1,4 +1,4 @@
-package lcq.game.model;
+package lcq.game.line.model;
 
 public class Block {
 	

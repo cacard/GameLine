@@ -1,31 +1,17 @@
 /**
- * 迷宫以及迷宫生成
  * 
- * @author licunqing
  */
 
-package lcq.game.model;
+package lcq.game.line.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Puzzle {
+import lcq.game.line.model.Pair;
+import lcq.game.line.model.Puzzle;
 
-	private static int minDim = 3;
-	private int dim; // 维度
-	private Block[][] blocks; // block集合
-	private List<Pair<Integer, Integer>> solution; // 一个解答，目的是用来生成Puzzle
-
-	// 禁止在外部创建一个Puzzle实例
-	private Puzzle() {
-		this(minDim);
-	}
-
-	private Puzzle(int dim) {
-		this.dim = dim < minDim ? minDim : dim;
-		init();
-	}
+public class PuzzleHelper {
 
 	/**
 	 * 寻找横向、纵向相邻元素
@@ -33,7 +19,7 @@ public class Puzzle {
 	 * @param p
 	 * @return
 	 */
-	public List<Pair<Integer, Integer>> getNeighbor(Pair<Integer, Integer> p) {
+	public static List<Pair<Integer, Integer>> getNeighbor(Pair<Integer, Integer> p, int dim) {
 		// 边界检查
 		if (p.getT1() > dim - 1 || p.getT2() > dim - 1) {
 			return null;
@@ -56,22 +42,12 @@ public class Puzzle {
 		return list;
 	}
 
-	// 初始化blocks[][]
-	private void init() {
-		blocks = new Block[dim][dim];
-		for (int i = 0; i < dim; i++) {
-			for (int j = 0; j < dim; j++) {
-				blocks[i][j] = new Block();
-			}
-		}
-	}
-
 	/**
 	 * 随机生成一对数组的索引
 	 * 
 	 * @return
 	 */
-	private Pair<Integer, Integer> getRandomPair() {
+	public static Pair<Integer, Integer> getRandomPair(int dim) {
 		int t1 = new Random(System.nanoTime()).nextInt(dim);
 		int t2 = new Random(System.nanoTime()).nextInt(dim);
 
@@ -96,10 +72,9 @@ public class Puzzle {
 		return p;
 	}
 
-	// test
+	// Test
 	public static void main(String[] args) {
-		Puzzle p = Puzzle.generate(6);
-		testGetRandomPair(p);
+
 	}
 
 	private static void testGetNeighbor(Puzzle p) {
@@ -114,7 +89,7 @@ public class Puzzle {
 
 		for (Pair<Integer, Integer> j : finding) {
 			System.out.println("finding[" + j.getT1() + "][" + j.getT2() + "]:");
-			List<Pair<Integer, Integer>> finded = p.getNeighbor(j);
+			List<Pair<Integer, Integer>> finded = PuzzleHelper.getNeighbor(j, p.getDim());
 			if (finded == null) {
 				System.out.println("no result");
 			} else {
@@ -128,8 +103,9 @@ public class Puzzle {
 
 	private static void testGetRandomPair(Puzzle p) {
 		for (int i = 0; i < 10; i++) {
-			Pair<Integer, Integer> pair = p.getRandomPair();
+			Pair<Integer, Integer> pair = PuzzleHelper.getRandomPair(p.getDim());
 			System.out.println("[" + pair.getT1() + "][" + pair.getT2() + "]");
 		}
 	}
+
 }
