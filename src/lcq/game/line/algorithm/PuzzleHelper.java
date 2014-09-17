@@ -20,7 +20,9 @@ public class PuzzleHelper {
 	 * @return
 	 */
 	public static List<Pair<Integer, Integer>> getNeighbor(Pair<Integer, Integer> p, int dim) {
-		// 边界检查
+		if (p == null || dim == 0) {
+			return null;
+		}
 		if (p.getT1() > dim - 1 || p.getT2() > dim - 1) {
 			return null;
 		}
@@ -52,24 +54,6 @@ public class PuzzleHelper {
 		int t2 = new Random(System.nanoTime()).nextInt(dim);
 
 		return new Pair<Integer, Integer>(t1, t2);
-	}
-
-	/**
-	 * 生成一个Puzzle
-	 * 
-	 * @param dim
-	 * @return
-	 */
-	public static Puzzle generate(int dim) {
-		Puzzle p = new Puzzle(dim);
-
-		// 随机指定一个起点
-
-		// 生成一条线
-
-		// 添加障碍物
-
-		return p;
 	}
 
 	// Test

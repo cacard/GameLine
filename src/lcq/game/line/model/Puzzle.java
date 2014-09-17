@@ -1,7 +1,6 @@
 /**
- * 迷宫以及迷宫生成
+ * 谜题
  * 
- * @author licunqing
  */
 
 package lcq.game.line.model;
@@ -16,11 +15,6 @@ public class Puzzle {
 	private int dim; // 维度
 	private Block[][] blocks; // block集合
 	private List<Pair<Integer, Integer>> solution; // 一个解答，目的是用来生成Puzzle
-
-	// 禁止在外部创建一个Puzzle实例
-	public Puzzle() {
-		this(minDim);
-	}
 
 	public Puzzle(int dim) {
 		this.dim = dim < minDim ? minDim : dim;
