@@ -14,15 +14,15 @@ public class LineStrategyTest implements LineStrategy {
 	public List<Pair<Integer, Integer>> generate(int dim) {
 		List<Pair<Integer, Integer>> list = new ArrayList<Pair<Integer, Integer>>();
 
-		for (int i = 0; i < dim - 1; i++) {
+		for (int i = 0; i < dim; i++) {
 			list.add(new Pair<Integer, Integer>(0, i));
 		}
 
-		for (int i = 1; i < dim - 1; i++) {
+		for (int i = 1; i < dim; i++) {
 			list.add(new Pair<Integer, Integer>(i, dim - 1));
 		}
 
-		return null;
+		return list;
 	}
 
 }

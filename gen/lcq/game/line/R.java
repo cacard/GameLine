@@ -15,13 +15,15 @@ public final class R {
         public static final int logo=0x7f020001;
     }
     public static final class id {
-        public static final int btnHelp=0x7f060005;
-        public static final int btnSettings=0x7f060004;
-        public static final int btnStartGame1=0x7f060003;
-        public static final int imageLogo=0x7f060001;
-        public static final int layoutMenu=0x7f060002;
-        public static final int ll1=0x7f060000;
-        public static final int tvCopy=0x7f060006;
+        public static final int btnHelp=0x7f060007;
+        public static final int btnSettings=0x7f060006;
+        public static final int btnStartGame1=0x7f060005;
+        public static final int imageLogo=0x7f060003;
+        public static final int layoutGamebox=0x7f060001;
+        public static final int layoutMenu=0x7f060004;
+        public static final int layoutRoot=0x7f060000;
+        public static final int ll1=0x7f060002;
+        public static final int tvCopy=0x7f060008;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;

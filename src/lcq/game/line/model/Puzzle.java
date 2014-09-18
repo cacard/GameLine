@@ -27,12 +27,20 @@ public class Puzzle {
 
 	// ≥ı ºªØblocks[][]
 	private void init() {
-		blocks = new Block[dim][dim];
+		setBlocks(new Block[dim][dim]);
 		for (int i = 0; i < dim; i++) {
 			for (int j = 0; j < dim; j++) {
-				blocks[i][j] = new Block();
+				getBlocks()[i][j] = new Block();
 			}
 		}
+	}
+
+	public Block[][] getBlocks() {
+		return blocks;
+	}
+
+	public void setBlocks(Block[][] blocks) {
+		this.blocks = blocks;
 	}
 
 }

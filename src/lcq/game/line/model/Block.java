@@ -2,20 +2,17 @@ package lcq.game.line.model;
 
 public class Block {
 
-	public static int ROLE_TOUCHABLE = 1; // 橘色:可点击的块
+	public static int ROLE_TOUCHABLE = 1; // 角色:可点击的块
+	public static int ROLE_START = 2; // 角色:起点
+	public static int ROLE_NULL = 0; // 角色:未指定
 	public static int ROLE_BARRIER = -1; // 角色:障碍物
 
-	private int top;
-	private int bottom;
-	private int left;
-	private int right;
-	private int role = 1; // 角色
-
+	private int role = ROLE_NULL; // 角色
 	private boolean isInLine; // 是否处于激活状态，已被连线
 	private int lineIndex; // 在连线中的索引
 
 	public Block() {
-		role = 1;
+		setRole(ROLE_NULL);
 	}
 
 	/**
@@ -24,7 +21,7 @@ public class Block {
 	 * @return
 	 */
 	public boolean isTouchable() {
-		return role == ROLE_TOUCHABLE;
+		return getRole() == ROLE_TOUCHABLE;
 	}
 
 	/**
@@ -33,7 +30,7 @@ public class Block {
 	 * @return
 	 */
 	public boolean isBarrier() {
-		return role == ROLE_BARRIER;
+		return getRole() == ROLE_BARRIER;
 	}
 
 	/**
@@ -52,5 +49,13 @@ public class Block {
 	 */
 	public int getLineIndex() {
 		return lineIndex;
+	}
+
+	public int getRole() {
+		return role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
 	}
 }

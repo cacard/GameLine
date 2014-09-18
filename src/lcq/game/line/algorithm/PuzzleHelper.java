@@ -45,7 +45,7 @@ public class PuzzleHelper {
 	}
 
 	/**
-	 * 随机生成一对数组的索引
+	 * 随机生成一个Pari作为二维数组的坐标
 	 * 
 	 * @return
 	 */
@@ -61,6 +61,11 @@ public class PuzzleHelper {
 
 	}
 
+	/**
+	 * 测试获取临接元素是否正确
+	 * 
+	 * @param p
+	 */
 	private static void testGetNeighbor(Puzzle p) {
 		System.out.println("[testGetNeighbor]");
 
@@ -85,6 +90,11 @@ public class PuzzleHelper {
 
 	}
 
+	/**
+	 * 测试Random是否符合随机
+	 * 
+	 * @param p
+	 */
 	private static void testGetRandomPair(Puzzle p) {
 		for (int i = 0; i < 10; i++) {
 			Pair<Integer, Integer> pair = PuzzleHelper.getRandomPair(p.getDim());
