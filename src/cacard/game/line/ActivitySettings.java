@@ -1,7 +1,4 @@
-/**
- * 
- */
-package lcq.game.line;
+package cacard.game.line;
 
 import android.app.Activity;
 import android.os.Bundle;

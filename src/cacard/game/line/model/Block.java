@@ -1,4 +1,4 @@
-package lcq.game.line.model;
+package cacard.game.line.model;
 
 public class Block {
 
@@ -16,12 +16,12 @@ public class Block {
 	}
 
 	/**
-	 * 是不是可连线的块
+	 * 是不是可连线的块，ROLE_TOUCHABLE和ROLE_START均可以
 	 * 
 	 * @return
 	 */
 	public boolean isTouchable() {
-		return getRole() == ROLE_TOUCHABLE;
+		return role == ROLE_TOUCHABLE || role == ROLE_START;
 	}
 
 	/**

@@ -1,13 +1,13 @@
-/**
- * 手动生成，供测试
- */
-package lcq.game.line.algorithm;
+package cacard.game.line.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import lcq.game.line.model.Pair;
+import cacard.game.line.model.Pair;
 
+/**
+ * 手动生成，供测试
+ */
 public class LineStrategyTest implements LineStrategy {
 
 	@Override

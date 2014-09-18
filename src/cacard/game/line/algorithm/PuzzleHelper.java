@@ -1,15 +1,11 @@
-/**
- * 
- */
-
-package lcq.game.line.algorithm;
+package cacard.game.line.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import lcq.game.line.model.Pair;
-import lcq.game.line.model.Puzzle;
+import cacard.game.line.model.Pair;
+import cacard.game.line.model.Puzzle;
 
 public class PuzzleHelper {
 
@@ -54,6 +50,43 @@ public class PuzzleHelper {
 		int t2 = new Random(System.nanoTime()).nextInt(dim);
 
 		return new Pair<Integer, Integer>(t1, t2);
+	}
+
+	/**
+	 * 判断一个Pair是否在一个Pair列表中
+	 * 
+	 * @param list
+	 * @param p
+	 * @return
+	 */
+	public static boolean containsPair(List<Pair<Integer, Integer>> l, Pair<Integer, Integer> p) {
+		if (l == null || l.size() == 0) {
+			return false;
+		}
+
+		if (p == null) {
+			return false;
+		}
+
+		for (Pair<Integer, Integer> e : l) {
+			if (e.equals(p)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * 判断一个Pair是否在一个Pair列表中
+	 * 
+	 * @param l
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	public static boolean containsPair(List<Pair<Integer, Integer>> l, int i, int j) {
+		return containsPair(l, new Pair<Integer, Integer>(i, j));
 	}
 
 	// Test

@@ -1,15 +1,15 @@
-/**
- * 谜题生成器
- */
-
-package lcq.game.line.algorithm;
+package cacard.game.line.algorithm;
 
 import java.util.List;
 
-import lcq.game.line.model.Block;
-import lcq.game.line.model.Pair;
-import lcq.game.line.model.Puzzle;
+import cacard.game.line.model.Block;
+import cacard.game.line.model.Pair;
+import cacard.game.line.model.Puzzle;
 
+
+/**
+ * 谜题生成器
+ */
 public class PuzzleGenerator {
 
 	private LineStrategy lineStrategy;
@@ -33,8 +33,9 @@ public class PuzzleGenerator {
 		Block[][] blocks = puzzle.getBlocks();
 
 		for (int i = 0; i < line.size(); i++) {
-			if (i == 0) {
+			if (i == 0) { // 一次性设置头部
 				blocks[line.get(i).getT1()][line.get(i).getT2()].setRole(Block.ROLE_START);
+				puzzle.setStart(new Pair<Integer, Integer>(line.get(i).getT1(), line.get(i).getT2()));
 			} else {
 				blocks[line.get(i).getT1()][line.get(i).getT2()].setRole(Block.ROLE_TOUCHABLE);
 			}

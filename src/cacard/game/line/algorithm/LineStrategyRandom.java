@@ -1,13 +1,13 @@
-/**
- * Line生成算法策略-随机生成
- */
-
-package lcq.game.line.algorithm;
+package cacard.game.line.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import lcq.game.line.model.Pair;
+import cacard.game.line.model.Pair;
+
+/**
+ * Line生成算法策略-随机生成
+ */
 
 public class LineStrategyRandom implements LineStrategy {
 
@@ -16,7 +16,7 @@ public class LineStrategyRandom implements LineStrategy {
 	 */
 	@Override
 	public List<Pair<Integer, Integer>> generate(int dim) {
-		
+
 		return null;
 	}
 

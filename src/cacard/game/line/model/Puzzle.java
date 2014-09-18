@@ -1,19 +1,18 @@
+package cacard.game.line.model;
+
+import java.util.List;
+
+
 /**
  * 谜题
  * 
  */
-
-package lcq.game.line.model;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 public class Puzzle {
 
 	private static int minDim = 3;
 	private int dim; // 维度
 	private Block[][] blocks; // block集合
+	private Pair<Integer, Integer> start;
 	private List<Pair<Integer, Integer>> solution; // 一个解答，目的是用来生成Puzzle
 
 	public Puzzle(int dim) {
@@ -41,6 +40,14 @@ public class Puzzle {
 
 	public void setBlocks(Block[][] blocks) {
 		this.blocks = blocks;
+	}
+
+	public Pair<Integer, Integer> getStart() {
+		return start;
+	}
+
+	public void setStart(Pair<Integer, Integer> start) {
+		this.start = start;
 	}
 
 }
