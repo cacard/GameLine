@@ -1,7 +1,9 @@
 package cacard.game.line.algorithm;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import cacard.game.line.model.Pair;
 
@@ -11,76 +13,40 @@ import cacard.game.line.model.Pair;
 
 public class LineStrategyRandom implements LineStrategy {
 
-	/**
-	 * TODO
-	 */
 	@Override
-	public List<Pair<Integer, Integer>> generate(int dim) {
+	public List<Pair> generate(int dim) {
+		List<Pair> line = new ArrayList<Pair>();
 
-		return null;
-	}
+		// 随机头部
+		line.add(PuzzleHelper.getRandomPair(dim));
 
-	/**
-	 * 判断元素是否在链表中
-	 * 
-	 * @param element
-	 * @param list
-	 * @return
-	 */
-	private boolean isInList(Pair<Integer, Integer> element, Pair<Integer, Integer> list) {
-		boolean result = false;
-
-		Pair<Integer, Integer> pointer = list;
-		while (pointer != null) {
-			if (pointer.equals(element)) {
-				result = true;
+		while (true) {
+			if (line.size() >= dim * dim) {
 				break;
 			}
-			pointer = pointer.getNext();
+
+			List<Pair> listNeighbor = PuzzleHelper.getNeighbor(line.get(line.size() - 1), dim);
+			PuzzleHelper.removeList(listNeighbor, line); // neighbor中去除已经在line中的元素
+
+			if (listNeighbor == null || listNeighbor.size() == 0) {
+				break;
+			}
+
+			// 随机选取一个
+			if (listNeighbor.size() == 1) {
+				line.add(listNeighbor.get(0));
+			} else {
+				int index = new Random(System.nanoTime()).nextInt(listNeighbor.size());
+				line.add(listNeighbor.get(index));
+			}
 		}
 
-		return result;
+		return line;
 	}
 
-	/**
-	 * Pair链表转化成ArrayList
-	 * 
-	 * @param head
-	 * @return
-	 */
-	private List<Pair<Integer, Integer>> convertToArrayList(Pair<Integer, Integer> head) {
+	// Test
+	public static void main(String[] args) {
 
-		if (head == null) {
-			return null;
-		}
-
-		List<Pair<Integer, Integer>> list = new ArrayList<Pair<Integer, Integer>>();
-
-		do {
-			list.add(head);
-			head = head.getNext();
-		} while (head != null);
-
-		return list;
-	}
-
-	/**
-	 * List<Pair<>> => List<String>
-	 * 
-	 * @param list
-	 * @return
-	 */
-	private List<String> convertPairListToStringList(List<Pair<Integer, Integer>> list) {
-		if (list == null || list.size() == 0) {
-			return null;
-		}
-
-		List<String> listString = new ArrayList<String>();
-		for (Pair<Integer, Integer> p : list) {
-			listString.add(p.toString());
-		}
-
-		return listString;
 	}
 
 }

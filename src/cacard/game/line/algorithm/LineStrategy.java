@@ -8,5 +8,5 @@ import cacard.game.line.model.Pair;
  * 生成一条Line的算法策略接口
  */
 public interface LineStrategy {
-	List<Pair<Integer, Integer>> generate(int dim);
+	List<Pair> generate(int dim);
 }

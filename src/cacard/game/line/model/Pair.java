@@ -3,14 +3,14 @@ package cacard.game.line.model;
 /**
  * 二维数组坐标对
  */
-public class Pair<T1, T2> {
+public class Pair {
 
-	private T1 t1;
-	private T2 t2;
-	private Pair<T1, T2> pre; // 实现链表，可用来表示line
-	private Pair<T1, T2> next;
+	private int t1;
+	private int t2;
+	private Pair pre; // 实现链表，可用来表示line
+	private Pair next;
 
-	public Pair(T1 t1, T2 t2) {
+	public Pair(int t1, int t2) {
 		this.setT1(t1);
 		this.setT2(t2);
 	}
@@ -31,42 +31,42 @@ public class Pair<T1, T2> {
 			return true;
 		}
 
-		if (this.getT1().equals(that.getT1()) && this.getT2().equals(that.getT2())) {
+		if (this.getT1() == (that.getT1()) && this.getT2() == (that.getT2())) {
 			return true;
 		}
 
 		return false;
 	}
 
-	public T1 getT1() {
+	public int getT1() {
 		return t1;
 	}
 
-	public void setT1(T1 t1) {
+	public void setT1(int t1) {
 		this.t1 = t1;
 	}
 
-	public T2 getT2() {
+	public int getT2() {
 		return t2;
 	}
 
-	public void setT2(T2 t2) {
+	public void setT2(int t2) {
 		this.t2 = t2;
 	}
 
-	public Pair<T1, T2> getPre() {
+	public Pair getPre() {
 		return pre;
 	}
 
-	public void setPre(Pair<T1, T2> pre) {
+	public void setPre(Pair pre) {
 		this.pre = pre;
 	}
 
-	public Pair<T1, T2> getNext() {
+	public Pair getNext() {
 		return next;
 	}
 
-	public void setNext(Pair<T1, T2> next) {
+	public void setNext(Pair next) {
 		this.next = next;
 	}
 

@@ -12,8 +12,8 @@ public class Puzzle {
 	private static int minDim = 3;
 	private int dim; // 维度
 	private Block[][] blocks; // block集合
-	private Pair<Integer, Integer> start;
-	private List<Pair<Integer, Integer>> solution; // 一个解答，目的是用来生成Puzzle
+	private Pair start;
+	private List<Pair> solution; // 一个解答，目的是用来生成Puzzle
 
 	public Puzzle(int dim) {
 		this.dim = dim < minDim ? minDim : dim;
@@ -42,11 +42,11 @@ public class Puzzle {
 		this.blocks = blocks;
 	}
 
-	public Pair<Integer, Integer> getStart() {
+	public Pair getStart() {
 		return start;
 	}
 
-	public void setStart(Pair<Integer, Integer> start) {
+	public void setStart(Pair start) {
 		this.start = start;
 	}
 
