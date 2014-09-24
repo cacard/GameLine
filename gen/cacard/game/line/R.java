@@ -16,8 +16,8 @@ public final class R {
     }
     public static final class id {
         public static final int btnHelp=0x7f06000a;
-        public static final int btnNewGame=0x7f060003;
-        public static final int btnReGame=0x7f060002;
+        public static final int btnNewGame=0x7f060002;
+        public static final int btnReGame=0x7f060003;
         public static final int btnSettings=0x7f060009;
         public static final int btnStartGame1=0x7f060008;
         public static final int imageLogo=0x7f060006;

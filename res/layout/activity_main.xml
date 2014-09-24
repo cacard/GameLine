@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="#fff"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -23,7 +24,7 @@
         android:id="@+id/layoutMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_below="@id/ll1"
         android:gravity="center_horizontal"
         android:orientation="vertical" >
 

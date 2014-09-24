@@ -4,7 +4,7 @@
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
     <application android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" android:theme="@style/AppTheme">
+        android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         <activity android:name="cacard.game.line.ActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -12,7 +12,9 @@
             </intent-filter>
         </activity>
         <!-- created by licq at 2014-09-16 17:13:40 -->
-        <activity android:name="cacard.game.line.ActivityGame">
+        <activity android:name="cacard.game.line.ActivityGame"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="com.sec.android.airview.HOVER"/>
             </intent-filter>

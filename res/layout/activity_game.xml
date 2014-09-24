@@ -8,27 +8,27 @@
     <LinearLayout
         android:id="@+id/topMenu"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnNewGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新开游戏" />
 
         <Button
             android:id="@+id/btnReGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="重新来过" />
-
-        <Button
-            android:id="@+id/btnNewGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="新游戏" />
     </LinearLayout>
 
     <cacard.game.line.view.GameboxLayout
         android:id="@+id/layoutGamebox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_below="@id/topMenu"
         android:background="#eee"
         android:orientation="vertical" >
     </cacard.game.line.view.GameboxLayout>
